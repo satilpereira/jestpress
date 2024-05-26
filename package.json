@@ -1,0 +1,47 @@
+{
+  "name": "jestpress",
+  "version": "0.0.1",
+  "type": "module",
+  "description": "Boilerplate for MVC node express aplication with testing.",
+  "main": "runner.js",
+  "files": [
+    "src",
+    "src/.gitignore"
+  ],
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/satilpereira/jestpress.git"
+  },
+  "keywords": [
+    "bootstrap",
+    "boilerplate",
+    "node",
+    "typescript",
+    "express",
+    "jest",
+    "backend",
+    "testing",
+    "mvc"
+  ],
+  "author": {
+    "name": "Satil Pereira",
+    "email": "satil@darch.dev",
+    "url": "https://satil.dev"
+  },
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/satilpereira/jestpress/issues"
+  },
+  "homepage": "https://github.com/satilpereira/jestpress#readme",
+  "dependencies": {
+    "chalk": "^5.3.0",
+    "cli-spinner": "^0.2.10",
+    "commander": "^11.1.0",
+    "execa": "^8.0.1",
+    "ncp": "^2.0.0"
+  },
+  "bin": {
+    "next-atomic": "runner.js"
+  }
+}
