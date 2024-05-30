@@ -1,5 +1,7 @@
 import express from 'express';
 
+import helmet from 'helmet';
+
 // Import helper classes
 import Logger from './helpers/Logger';
 
@@ -17,6 +19,13 @@ if (process.env.NODE_ENV === 'development') {
 
 // Set up Express app
 const app = express();
+
+app.use(helmet());
+
+// !TODO remove this route, it's just for testing purposes
+app.get('/', (req, res) => {
+  res.send('Hello World');
+});
 
 // Set up Express app to use JSON as the body parser
 app.use(express.json());
