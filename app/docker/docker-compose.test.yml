@@ -1,0 +1,29 @@
+services:
+  app:
+    build:
+      context: ..
+      dockerfile: ./docker/Dockerfile.test
+    environment:
+      - NODE_ENV=test
+      - DATABASE_URL=postgres://postgres:postgres@postgres:5432/jestpress-test-db
+    volumes:
+      - ..:/app
+      - /app/node_modules
+    depends_on:
+      - postgres
+    command: ['npm', 'run', 'test']
+
+  postgres: # cli command to access the database: docker exec -it jestpress_postgres_1 psql -U postgres -d jestpress-test-db
+    image: postgres:15
+    ports:
+      - '5433:5432' # Different port to avoid conflicts with dev db
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=jestpress-test-db
+    volumes:
+      - postgres_test_data:/var/lib/postgresql/data
+      - ../database/test-init.sql:/docker-entrypoint-initdb.d/test-init.sql # Initialization script
+
+volumes:
+  postgres_test_data:

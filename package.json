@@ -42,6 +42,6 @@
     "ncp": "^2.0.0"
   },
   "bin": {
-    "next-atomic": "runner.js"
+    "jestpress": "runner.js"
   }
 }

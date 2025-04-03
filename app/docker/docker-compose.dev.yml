@@ -1,0 +1,40 @@
+services:
+  app:
+    build:
+      context: ..
+      dockerfile: ./docker/Dockerfile.dev
+    ports:
+      - '5000:5000'
+    environment:
+      - NODE_ENV=development
+      - DATABASE_URL=postgres://postgres:postgres@postgres:5432/jestpress-db
+    volumes:
+      - .:/appp
+      - /app/node_modules # Prevent overwriting node_modules
+    depends_on:
+      - postgres # Wait for postgres to be ready
+    command: ['npm', 'run', 'dev']
+    develop:
+      watch:
+        - action: sync
+          path: .. # Path to your source code on the hostt
+          target: /app # Path inside the container
+          ignore:
+            - node_modules/
+        - action: rebuild
+          path: package.json # Rebuild on changes to package.jsonson
+
+  postgres: # cli command to access the database: psql -h localhost -p 5432 -U postgres -d jestpress-db
+    image: postgres:15 # Use PostgreSQL image
+    ports:
+      - '5432:5432' # Expose PostgreSQL port
+    environment:
+      - POSTGRES_USER=postgres # Default PostgreSQL user
+      - POSTGRES_PASSWORD=postgres # Default password
+      - POSTGRES_DB=jestpress-db # Your database name
+    volumes:
+      - postgres_data:/var/lib/postgresql/data # Persistent storage
+      - ../database/dev-init.sql:/docker-entrypoint-initdb.d/dev-init.sql # Initialization script
+
+volumes:
+  postgres_data: # Volume for PostgreSQL data

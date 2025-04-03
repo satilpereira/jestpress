@@ -1,0 +1,24 @@
+{
+  "api": {
+    "enableOpenApiChecks": true
+  },
+  "generation": {
+    "enableControllers": true,
+    "enableModels": true,
+    "enableRoutes": true,
+    "enableServices": true,
+    "enableLogs": true
+  },
+  "middlewares": {
+    "enable": true,
+    "enableCors": true,
+    "enableErrorHandler": true,
+    "enableResponseHandler": true,
+    "enableRequestLogger": true,
+    "enableSecurityHeaders": true
+  },
+  "routingOptions": {
+    "basePath": "./src/",
+    "paths": {}
+  }
+}

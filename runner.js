@@ -9,15 +9,19 @@ import { exec } from 'child_process'
 import fs from 'fs'
 import { Spinner } from 'cli-spinner'
 import chalk from 'chalk'
+import { verifyRouteFormat } from './helpers/verifyRouteFormat.js'
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
 const ncpAsync = promisify(ncp)
 const execAsync = promisify(exec)
 
+program.version('0.0.1-pre_alpha')
+
+// Handle application creation
 program
-  .version('1.2.0')
   .command('create [projectName]')
+  .alias('c')
   .description(
     'Create a new application in the specified directory or the current directory if not provided',
   )
@@ -81,6 +85,61 @@ program
     } catch (error) {
       console.error(chalk.red('⚠️ Error creating application:', error.message))
     }
+  })
+
+// Handle route creation
+program
+  .command('route')
+  .argument('<apiRoute>', 'The route to create')
+  .description('Create a new route')
+  .option('-d, --delete', 'Create a DELETE route')
+  .option('-doc, --documentation', 'Create a documentation file')
+  .option('-g, --get', 'Create a GET route')
+  .option('-pa, --patch', 'Create a PATCH route')
+  .option('-p, --post', 'Create a POST route')
+  .option('-u, --put', 'Create a PUT route')
+  .option('-t, --test', 'Create a test file')
+  .option('-v, --version <char>', 'API version')
+  .action(async (apiRoute, options) => {
+    const methods = ['get', 'post', 'patch', 'delete', 'put']
+    const selectedMethods = methods.filter(method => options[method])
+
+    // Check if more than one method is selected
+    if (selectedMethods.length > 1) {
+      console.error(chalk.red('⚠️ Please select only one HTTP method.'))
+      return
+    }
+
+    // Default to GET if no method is selected
+    const method = (selectedMethods[0] || 'get').toUpperCase()
+
+    // Default to v1 if no version is specified
+    const apiVersion = 'v' + (options.version || '1')
+
+    // Verify if route is in the correct format
+    const routeFormat = verifyRouteFormat(apiRoute)
+    if (routeFormat === 0) {
+      console.error(chalk.red('⚠️ Invalid route format.'))
+      return
+    }
+
+    console.log(
+      `${method} /api/${apiVersion}/${
+        apiRoute.startsWith('/') ? apiRoute.slice(1) : apiRoute
+      } ${routeFormat === 1 ? '(OpenAPI)' : ''}`,
+    )
+  })
+  .on('--help', () => {
+    console.log(`
+Examples:
+  jestpress route users --post                         # Creates a POST route for /api/v1/users
+  jestpress route posts/{postId}/comments --get        # Creates a GET route for /api/v1/posts/{postId}/comments
+  jestpress route comments/{commentId} --delete        # Creates a DELETE route for /api/v1/comments/{commentId}
+
+Default Behavior:
+  If no options are specified, the route will default to a GET route. Only one method option can be used at a time.
+  If no version is specified, the route will default to v1.
+  `)
   })
 
 program.parse(process.argv)
