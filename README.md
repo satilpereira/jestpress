@@ -70,12 +70,12 @@ Encountering any issues? Report them on the [Github Issues](https://github.com/s
 7. [x] Add support for multiple utils
 8. [x] Add support for multiple helpers
 9. [x] Add support for error handling
-10. [ ] Add support for multiple API versions
+10. [x] Add support for multiple API versions
 11. [ ] Add support for logging
 12. [x] Add support for Docker
 13. [ ] Add support for testing
-14. [ ] Add support for security
-15. [ ] Add support for rate limiting
+14. [x] Add support for security
+15. [x] Add support for rate limiting
 16. [ ] Add support for deployment
 17. [ ] Add support for documentation
 18. [ ] Add support for api routing via command line

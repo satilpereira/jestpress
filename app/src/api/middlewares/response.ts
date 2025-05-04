@@ -128,7 +128,7 @@ export const responseMiddleware = (
     const { status, message } = params;
 
     // Initialize response object with common properties
-    const response: Record<string, unknown> = { status, message };
+    const response: Record<string, unknown> = { message };
 
     // Format response based on status code range
     switch (true) {
