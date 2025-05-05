@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/satilpereira/jestpress/compare/v1.0.0...v1.0.1) (2025-05-05)
+
+
+### Bug Fixes
+
+* read package.json synchronously and log its content ([9facb39](https://github.com/satilpereira/jestpress/commit/9facb39387cb8ad0c8f94922793e2ff9ff77bf26))
+
 # 1.0.0 (2025-05-05)
 
 
