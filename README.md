@@ -76,7 +76,7 @@ Encountering any issues? Report them on the [Github Issues](https://github.com/s
 13. [ ] Add support for testing
 14. [x] Add support for security
 15. [x] Add support for rate limiting
-16. [ ] Add support for deployment
+16. [x] Add support for deployment(NOT FULLY TESTED)
 17. [ ] Add support for documentation
 18. [ ] Add support for api routing via command line
 19. [ ] Add support for configuration via config file

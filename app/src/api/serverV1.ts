@@ -20,7 +20,7 @@ const environment = process.env.NODE_ENV;
 // ?Set up Express app to use helmet so it doesn't get hurt 😵
 app.use(helmet());
 
-// ?Apply rate limiting and speed limiting only in production environment
+// ?Apply rate limiting and speed limiting only in production environment so it don't piss off the devs
 if (environment === 'production') {
   // Set up rate limiting to prevent abuse
   const limiter = rateLimit({

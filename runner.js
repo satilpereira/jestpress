@@ -10,13 +10,20 @@ import fs from 'fs'
 import { Spinner } from 'cli-spinner'
 import chalk from 'chalk'
 import { verifyRouteFormat } from './helpers/verifyRouteFormat.js'
+import packageJson from './package.json' assert { type: 'json' }
+
+const version = packageJson.version
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
 const ncpAsync = promisify(ncp)
 const execAsync = promisify(exec)
 
-program.version('0.0.1-pre_alpha')
+program.version(
+  version,
+  '-v, --version',
+  'Output the current version of jestpress',
+)
 
 // Handle application creation
 program
