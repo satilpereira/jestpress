@@ -1,3 +1,10 @@
+## [1.0.2](https://github.com/satilpereira/jestpress/compare/v1.0.1...v1.0.2) (2025-05-05)
+
+
+### Bug Fixes
+
+* update package.json path resolution to use __dirname ([1c2a7f7](https://github.com/satilpereira/jestpress/commit/1c2a7f7806e7d195e12b0614c381650c9ac65842))
+
 ## [1.0.1](https://github.com/satilpereira/jestpress/compare/v1.0.0...v1.0.1) (2025-05-05)
 
 
