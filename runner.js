@@ -10,7 +10,10 @@ import fs from 'fs'
 import { Spinner } from 'cli-spinner'
 import chalk from 'chalk'
 import { verifyRouteFormat } from './helpers/verifyRouteFormat.js'
-import packageJson from './package.json' assert { type: 'json' }
+import { readFileSync } from 'fs'
+
+const packageJson = JSON.parse(readFileSync('./package.json', 'utf-8'))
+console.log(packageJson)
 
 const version = packageJson.version
 
