@@ -12,13 +12,15 @@ import chalk from 'chalk'
 import { verifyRouteFormat } from './helpers/verifyRouteFormat.js'
 import { readFileSync } from 'fs'
 
-const packageJson = JSON.parse(readFileSync('./package.json', 'utf-8'))
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = path.dirname(__filename)
+
+const packageJsonPath = path.join(__dirname, 'package.json')
+const packageJson = JSON.parse(readFileSync(packageJsonPath, 'utf-8'))
 console.log(packageJson)
 
 const version = packageJson.version
 
-const __filename = fileURLToPath(import.meta.url)
-const __dirname = path.dirname(__filename)
 const ncpAsync = promisify(ncp)
 const execAsync = promisify(exec)
 
