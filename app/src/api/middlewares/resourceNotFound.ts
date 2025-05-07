@@ -1,7 +1,7 @@
 import { HttpStatusCode, RequestHandlerFunction } from '@/middlewares/barrel';
 import { RESOURCE_ERRORS, ResourceError } from '@/constants/ErrorTypes';
 
-const resourceNotFoundMiddleware: RequestHandlerFunction = async (req, res) => {
+export const resourceNotFoundMiddleware: RequestHandlerFunction = async (req, res) => {
   const errorType: ResourceError = RESOURCE_ERRORS.RESOURCE_NOT_FOUND;
   const statusCode = HttpStatusCode.NOT_FOUND;
   const message = 'Resource not found';
@@ -21,5 +21,3 @@ const resourceNotFoundMiddleware: RequestHandlerFunction = async (req, res) => {
     }
   })
 }
-
-export default resourceNotFoundMiddleware;

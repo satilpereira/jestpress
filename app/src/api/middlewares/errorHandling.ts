@@ -44,7 +44,7 @@ function isError(error: unknown): error is Error {
  * @param res - Express Response object
  * @param next - Express NextFunction
  */
-const errorHandlingMiddleware: ErrorHandlerFunction = (
+export const errorHandlingMiddleware: ErrorHandlerFunction = (
   error,
   req,
   res,
@@ -98,5 +98,3 @@ const errorHandlingMiddleware: ErrorHandlerFunction = (
     }
   });
 };
-
-export default errorHandlingMiddleware;
