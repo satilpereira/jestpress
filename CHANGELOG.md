@@ -1,3 +1,11 @@
+# [1.1.0](https://github.com/satilpereira/jestpress/compare/v1.0.3...v1.1.0) (2025-05-07)
+
+
+### Features
+
+* add Prisma dependencies to package.json and package-lock.json ([985876b](https://github.com/satilpereira/jestpress/commit/985876b036e9f9711cbd460419f283cdfcc1971c))
+* add resource not found middleware and error types ([fb06f8e](https://github.com/satilpereira/jestpress/commit/fb06f8e05c76d54957f075e25918c46a4fdf2388))
+
 ## [1.0.3](https://github.com/satilpereira/jestpress/compare/v1.0.2...v1.0.3) (2025-05-05)
 
 
