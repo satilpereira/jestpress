@@ -1,3 +1,10 @@
+## [1.1.1](https://github.com/satilpereira/jestpress/compare/v1.1.0...v1.1.1) (2025-05-07)
+
+
+### Bug Fixes
+
+* update project name and add work in progress note in README.md ([9816e09](https://github.com/satilpereira/jestpress/commit/9816e093b9d985739a4ca3106eee1a6d65a3c1c6))
+
 # [1.1.0](https://github.com/satilpereira/jestpress/compare/v1.0.3...v1.1.0) (2025-05-07)
 
 
