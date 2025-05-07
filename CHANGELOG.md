@@ -1,3 +1,10 @@
+## [1.0.3](https://github.com/satilpereira/jestpress/compare/v1.0.2...v1.0.3) (2025-05-05)
+
+
+### Bug Fixes
+
+* remove console log of package.json in runner.js ([b6be17b](https://github.com/satilpereira/jestpress/commit/b6be17b533f7e97bd0f968426f240eb1d389dd3c))
+
 ## [1.0.2](https://github.com/satilpereira/jestpress/compare/v1.0.1...v1.0.2) (2025-05-05)
 
 
