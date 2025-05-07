@@ -8,7 +8,10 @@
     "src",
     "src/.gitignore",
     "cli",
-    "helpers"
+    "helpers",
+    "templates",
+    "LICENSE",
+    "README.md"
   ],
   "scripts": {},
   "repository": {
