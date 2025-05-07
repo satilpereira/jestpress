@@ -1,3 +1,10 @@
+## [1.1.2](https://github.com/satilpereira/jestpress/compare/v1.1.1...v1.1.2) (2025-05-07)
+
+
+### Bug Fixes
+
+* dynamically resolve helper path for verifyRouteFormat in createRoute.js ([85a24e3](https://github.com/satilpereira/jestpress/commit/85a24e3d7579499804fac8856d7eb30bbc01a70d))
+
 ## [1.1.1](https://github.com/satilpereira/jestpress/compare/v1.1.0...v1.1.1) (2025-05-07)
 
 
