@@ -1,4 +1,7 @@
-# Next atomic (beta)
+# Jestpress (beta)
+
+> [!NOTE]
+> Hey there! This is a work in progress. And I'll not yet be bumping a major version for breaking changes. SO, please, consider this as a beta version. If you have any suggestions or would like to contribute, feel free to reach out to me.
 
 <span class="badge-npmdownloads"><a href="https://npmjs.org/package/jestpress" title="View this project on NPM"><img src="https://img.shields.io/npm/dt/jestpress" alt="NPM downloads" /></a></span>
 <span class="badge-npmversion"><a href="https://npmjs.org/package/jestpress" title="View this project on NPM"><img src="https://img.shields.io/npm/v/jestpress" alt="NPM version" /></a></span>
