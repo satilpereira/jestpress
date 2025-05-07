@@ -1,6 +1,13 @@
 import { HttpStatusCode, RequestHandlerFunction } from '@/middlewares/barrel';
 import { RESOURCE_ERRORS, ResourceError } from '@/constants/ErrorTypes';
 
+/**
+ * Middleware to handle requests for resources that do not exist.
+ * Sends a standardized 404 Not Found response using the reply method.
+ *
+ * @param req - Express Request object
+ * @param res - Express Response object
+ */
 export const resourceNotFoundMiddleware: RequestHandlerFunction = async (req, res) => {
   const errorType: ResourceError = RESOURCE_ERRORS.RESOURCE_NOT_FOUND;
   const statusCode = HttpStatusCode.NOT_FOUND;
