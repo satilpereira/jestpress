@@ -1,6 +1,6 @@
 {
   "name": "jestpress",
-  "version": "1.0.3",
+  "version": "1.1.0",
   "type": "module",
   "description": "Boilerplate for MVC node express aplication with testing.",
   "main": "runner.js",
