@@ -4,7 +4,17 @@
  * @param {string} cliDir - Directory of the CLI runner.
  */
 import chalk from 'chalk'
-import { verifyRouteFormat } from '../helpers/verifyRouteFormat.js'
+import { fileURLToPath } from 'url'
+import path from 'path'
+
+// Dynamically resolve the helper path relative to this file
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = path.dirname(__filename)
+const verifyRouteFormatPath = path.resolve(
+  __dirname,
+  '../helpers/verifyRouteFormat.js',
+)
+const { verifyRouteFormat } = await import(verifyRouteFormatPath)
 
 export default function registerCreateRouteCommand(program, cliDir) {
   program
