@@ -20,6 +20,18 @@ export const SERVER_ERRORS = {
   INTERNAL_SERVER_ERROR: 'INTERNAL_SERVER_ERROR',
 } as const;
 
+export const RESOURCE_ERRORS = {
+  RESOURCE_NOT_FOUND: 'RESOURCE_NOT_FOUND',
+  RESOURCE_ALREADY_EXISTS: 'RESOURCE_ALREADY_EXISTS',
+} as const;
+
+export const AUTH_ERRORS = {
+  UNAUTHORIZED: 'UNAUTHORIZED',
+  FORBIDDEN: 'FORBIDDEN',
+  INVALID_TOKEN: 'INVALID_TOKEN',
+  EXPIRED_TOKEN: 'EXPIRED_TOKEN',
+} as const;
+
 export type ClientError =
   | (typeof CLIENT_ERRORS)[keyof typeof CLIENT_ERRORS]
   | 'UNKNOWN_ERROR';
@@ -27,3 +39,12 @@ export type ClientError =
 export type ServerError =
   | (typeof SERVER_ERRORS)[keyof typeof SERVER_ERRORS]
   | 'UNKNOWN_ERROR';
+
+export type ResourceError =
+  | (typeof RESOURCE_ERRORS)[keyof typeof RESOURCE_ERRORS]
+  | 'UNKNOWN_ERROR';
+
+export type AuthError =
+  | (typeof AUTH_ERRORS)[keyof typeof AUTH_ERRORS]
+  | 'UNKNOWN_ERROR';
+

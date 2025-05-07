@@ -9,6 +9,7 @@ import rateLimit from 'express-rate-limit';
 import slowDown from 'express-slow-down';
 import { responseMiddleware } from '@/middlewares/response.js';
 import errorHandlingMiddleware from '@/middlewares/errorHandling.js';
+import resourceNotFoundMiddleware from '@/middlewares/resourceNotFound.js';
 import helmet from 'helmet';
 import { routesExecV1 } from '@/routes/index';
 
@@ -57,5 +58,8 @@ routesExecV1(app);
 
 // ?Register error handling middleware AFTER all routes
 app.use(errorHandlingMiddleware);
+
+// ?Register page not found middleware
+app.use(resourceNotFoundMiddleware);
 
 export default app;
