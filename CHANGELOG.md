@@ -1,3 +1,10 @@
+## [1.1.4](https://github.com/satilpereira/jestpress/compare/v1.1.3...v1.1.4) (2025-05-07)
+
+
+### Bug Fixes
+
+* add missing files to package.json 'files' list ([78479ae](https://github.com/satilpereira/jestpress/commit/78479ae7ee0b5e68621f047bfd0fba52158f2231))
+
 ## [1.1.3](https://github.com/satilpereira/jestpress/compare/v1.1.2...v1.1.3) (2025-05-07)
 
 
