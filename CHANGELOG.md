@@ -1,3 +1,10 @@
+## [1.1.3](https://github.com/satilpereira/jestpress/compare/v1.1.2...v1.1.3) (2025-05-07)
+
+
+### Bug Fixes
+
+* include 'cli' and 'helpers' directories in package.json files list ([3151524](https://github.com/satilpereira/jestpress/commit/3151524eb1d787f3de33a1fa1e3fe8e34296d589))
+
 ## [1.1.2](https://github.com/satilpereira/jestpress/compare/v1.1.1...v1.1.2) (2025-05-07)
 
 
