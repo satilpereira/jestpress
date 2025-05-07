@@ -6,7 +6,9 @@
   "main": "runner.js",
   "files": [
     "src",
-    "src/.gitignore"
+    "src/.gitignore",
+    "cli",
+    "helpers"
   ],
   "scripts": {},
   "repository": {
